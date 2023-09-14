@@ -15,3 +15,7 @@ repositories {
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
 }
+
+application {
+    mainClassName = "com.migueljo.jobsearch.JobSearch"
+}
