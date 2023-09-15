@@ -17,6 +17,7 @@ public class JobPosition {
 	@SerializedName("company_logo")
 	private String companyLogo;
 
+	// TODO: Use lombok to avoid writing getters ans setters manually
 	public String getId() {
 		return id;
 	}
