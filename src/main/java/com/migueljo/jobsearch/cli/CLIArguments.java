@@ -18,6 +18,10 @@ public class CLIArguments {
 					descriptionKey = "Cada busqueda puede incluir una ubicación"
 	)
 	private String location;
+	@Parameter(
+					names = {"--page", "-p"},
+					description = "La API devuelve 50 resultados, usa un número para página"
+	)
 	private Integer page = 0;
 	private boolean isFullTime = false;
 	private boolean isMarkdown = false;
