@@ -1,11 +1,22 @@
 package com.migueljo.jobsearch.cli;
 
+import com.beust.jcommander.Parameter;
+
 public class CLIArguments {
 	CLIArguments() {
 
 	}
 
+	@Parameter(
+					required = true,
+					description = "KEYWORD",
+					descriptionKey = "KEYWORD"
+	)
 	private String keyword;
+	@Parameter(
+					names = {"--location", "-l"},
+					descriptionKey = "Cada busqueda puede incluir una ubicación"
+	)
 	private String location;
 	private Integer page = 0;
 	private boolean isFullTime = false;
@@ -46,5 +57,9 @@ public class CLIArguments {
 						", isMarkdown=" + isMarkdown +
 						", isHelp=" + isHelp +
 						'}';
+	}
+
+	public static CLIArguments newInstance() {
+		return new CLIArguments();
 	}
 }
