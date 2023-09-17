@@ -28,6 +28,10 @@ public class CLIArguments {
 					description = "Agregar si queremos trabajos de tiempo completo"
 	)
 	private boolean isFullTime = false;
+	@Parameter(
+					names = {"--markdown", "-m"},
+					description = "Obtener resultados en markdown"
+	)
 	private boolean isMarkdown = false;
 	private boolean isHelp = false;
 
