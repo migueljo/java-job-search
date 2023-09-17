@@ -9,5 +9,6 @@ public class JobSearch {
 	public static void main(String[] args) {
 		System.out.println("JobSearch.main");
 		JCommander jCommander = buildCommanderWithName("job-search", CLIArguments::newInstance);
+		System.out.println(jCommander);
 	}
 }
