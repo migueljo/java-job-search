@@ -4,6 +4,7 @@ import com.beust.jcommander.JCommander;
 import com.migueljo.jobsearch.cli.CLIArguments;
 
 import java.util.Collections;
+import java.util.Optional;
 import java.util.stream.Stream;
 
 import static com.migueljo.jobsearch.CommanderFunctions.buildCommanderWithName;
@@ -18,5 +19,10 @@ public class JobSearch {
 						.orElse(Collections.emptyList())
 						.stream()
 						.map(object -> (CLIArguments) object);
+
+		Optional<CLIArguments> cliArguments = streamOfCLI
+						.filter(cli -> !cli.isHelp())
+						.filter(cli -> cli.getKeyword() != null)
+						.findFirst();
 	}
 }

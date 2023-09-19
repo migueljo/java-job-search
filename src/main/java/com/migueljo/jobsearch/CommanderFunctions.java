@@ -1,6 +1,7 @@
 package com.migueljo.jobsearch;
 
 import com.beust.jcommander.JCommander;
+import com.beust.jcommander.ParameterException;
 
 import java.util.List;
 import java.util.Optional;
@@ -21,6 +22,13 @@ public class CommanderFunctions {
 					String[] arguments,
 					Consumer<JCommander> onError
 	) {
+		try {
+			jCommander.parse(arguments);
+			return Optional.of(jCommander.getObjects());
+		} catch (ParameterException error) {
+			onError.accept(jCommander);
+		}
 
+		return Optional.empty();
 	}
 }
