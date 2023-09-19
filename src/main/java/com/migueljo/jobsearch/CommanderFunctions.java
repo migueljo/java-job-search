@@ -2,6 +2,9 @@ package com.migueljo.jobsearch;
 
 import com.beust.jcommander.JCommander;
 
+import java.util.List;
+import java.util.Optional;
+import java.util.function.Consumer;
 import java.util.function.Supplier;
 
 public class CommanderFunctions {
@@ -11,5 +14,13 @@ public class CommanderFunctions {
 						.build();
 		jCommander.setProgramName(cliName);
 		return jCommander;
+	}
+
+	static Optional<List<Object>> parseArguments(
+					JCommander jCommander,
+					String[] arguments,
+					Consumer<JCommander> onError
+	) {
+
 	}
 }
